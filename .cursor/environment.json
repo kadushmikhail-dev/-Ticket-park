@@ -1,0 +1,10 @@
+{
+  "name": "Ticket-park Telegram bot",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "bot",
+      "command": ".venv/bin/python Bot.py"
+    }
+  ]
+}
