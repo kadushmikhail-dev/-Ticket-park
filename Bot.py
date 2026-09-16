@@ -4,8 +4,13 @@ from aiogram import Bot, Dispatcher, Router
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.filters import CommandStart
 
-# Токен бота (берётся из переменной окружения API_TOKEN, можно задать секретом)
-API_TOKEN = os.getenv("API_TOKEN", "8214877033:AAFMzwv1uMYQ5YB8HzQ1seHNhxx_59QrM_M")
+# Токен бота: сначала переменная окружения BOT_TOKEN (можно задать в терминале
+# или секретом), затем API_TOKEN, иначе — запасной литерал.
+API_TOKEN = (
+    os.getenv("BOT_TOKEN")
+    or os.getenv("API_TOKEN")
+    or "8214877033:AAFMzwv1uMYQ5YB8HzQ1seHNhxx_59QrM_M"
+)
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
